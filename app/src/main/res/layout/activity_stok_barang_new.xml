@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StokBarangNew">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clNavbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/Blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/blue_button"
+            android:contentDescription="Back"
+            android:onClick="btnBack"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tvtambahBarangBaru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Tambah Barang Baru"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvNamabarang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Nama Barang"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clNavbar" />
+
+    <EditText
+        android:id="@+id/etNamaBarang"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/white_edit_text_shape"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNamabarang" />
+
+    <TextView
+        android:id="@+id/tvHargaJual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Harga Jual"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNamaBarang" />
+
+    <EditText
+        android:id="@+id/etHargaJual"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/white_edit_text_shape"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHargaJual" />
+
+    <TextView
+        android:id="@+id/tvHargaPokok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Harga Pokok"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etHargaJual" />
+
+    <EditText
+        android:id="@+id/etHargaPokok"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/white_edit_text_shape"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHargaPokok" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/blue_button"
+        app:layout_constraintTop_toBottomOf="@id/etHargaPokok"
+        tools:layout_editor_absoluteX="-92dp">
+
+        <TextView
+            android:id="@+id/tvJumlahProduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@id/ivItem"
+            android:text="Jumlah Produk Ditambah"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvNilaiJumlahProduk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvJumlahProduk"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/btnMinStokBarang"
+            android:inputType="number"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnPlusStokBarang"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/tvJumlahProduk"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/tvNilaiJumlahProduk"
+            android:background="@drawable/yellow_button"
+            android:gravity="center"
+            android:text="+"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnMinStokBarang"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/tvJumlahProduk"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/ivItem"
+            android:background="@drawable/yellow_button"
+            android:gravity="center"
+            android:text="-"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivItem"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/placeholder" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/yellow_button"
+        android:onClick="CreateBarang"
+        android:text="Simpan Barang"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="391dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="370dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

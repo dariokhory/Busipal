@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnalisisKeuangan">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clNavbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/Blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageButton
+            android:id="@+id/ivBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="btnBackProfile"
+            android:src="@drawable/back"
+            android:background="@drawable/blue_button"
+            app:tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/tvAnalisisKeuangan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Analisis Keuangan"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/clNavbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/llFilterWaktu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/clNavbar">
+                    <Button
+                        android:id="@+id/tvPilihTanggal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pilih Tanggal"
+                        android:background="@drawable/btn_filter"
+                        android:paddingHorizontal="10dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:paddingVertical="3dp"
+                        android:focusable="true"
+                        android:textStyle="bold"/>
+                    <Button
+                        android:id="@+id/tvAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All"
+                        android:background="@drawable/btn_filter_active"
+                        android:layout_marginHorizontal="3dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="3dp"
+                        android:focusable="true"
+                        android:textStyle="bold"/>
+                    <Button
+                        android:id="@+id/tvMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Month"
+                        android:background="@drawable/btn_filter"
+                        android:paddingHorizontal="10dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:paddingVertical="3dp"
+                        android:focusable="true"
+                        android:textStyle="bold"/>
+                    <Button
+                        android:id="@+id/tvWeek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Week"
+                        android:background="@drawable/btn_filter"
+                        android:paddingHorizontal="10dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:paddingVertical="3dp"
+                        android:focusable="true"
+                        android:textStyle="bold"/>
+                    <Button
+                        android:id="@+id/tvDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Day"
+                        android:background="@drawable/btn_filter"
+                        android:paddingHorizontal="10dp"
+                        android:layout_marginHorizontal="3dp"
+                        android:paddingVertical="3dp"
+                        android:focusable="true"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <RelativeLayout
+                android:id="@+id/rlOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/blue_button"
+                app:layout_constraintTop_toBottomOf="@id/llFilterWaktu">
+
+                <TextView
+                    android:id="@+id/tvOverview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:text="Overview"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvOverview"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rlTotalPenjualan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/white_button">
+
+                                <TextView
+                                    android:id="@+id/tvTotalPenjualan"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:text="Total Penjualan"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvTotalPenjualan"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:layout_marginBottom="30dp"
+                                    android:text="Rp 0"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlTotalPengeluaran"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/white_button">
+
+                                <TextView
+                                    android:id="@+id/tvTotalPengeluaran"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:text="Total Pengeluaran"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvTotalPengeluaran"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:layout_marginBottom="30dp"
+                                    android:text="Rp 0"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rlProfit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/white_button">
+
+                                <TextView
+                                    android:id="@+id/tvProfit"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:text="Profit"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvProfit"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:layout_marginBottom="30dp"
+                                    android:text="Rp 0"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlBarangTerlaris"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/white_button">
+
+                                <TextView
+                                    android:id="@+id/tvBarangTerlaris"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:text="Barang Terlaris"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvBarangTerlaris"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:layout_marginBottom="30dp"
+                                    android:text="-"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rlJumlahTransaksi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/white_button">
+
+                                <TextView
+                                    android:id="@+id/tvJumlahTransaksi"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:text="Jumlah Transaksi"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvJumlahTransaksi"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:layout_marginBottom="30dp"
+                                    android:text="0"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlWaktuTerlaris"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/white_button">
+
+                                <TextView
+                                    android:id="@+id/tvWaktuTerlaris"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:text="Waktu Transaksi Terbanyak"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvWaktuTerlaris"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:layout_marginBottom="30dp"
+                                    android:text="-"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rlRataTransaksi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/white_button">
+
+                                <TextView
+                                    android:id="@+id/tvRataTransaksi"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:text="rata-rata Transaksi"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvRataTransaksi"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:layout_marginBottom="30dp"
+                                    android:text="-"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlPelangganUtama"
+                                android:layout_width="wrap_content"
+                                android:layout_height="100dp"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/white_button">
+
+                                <TextView
+                                    android:id="@+id/tvPelangganUtama"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:text="Pelanggan Utama"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvPelangganUtama"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginRight="50dp"
+                                    android:layout_marginBottom="30dp"
+                                    android:text="-"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llGrafikFinansial"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="150dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/blue_button">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:text="Grafik Finansial"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/llFilterGrafik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintTop_toBottomOf="@id/llGrafikFinansial"
+                        >
+
+                        <Button
+                            android:id="@+id/tvPengeluaran"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="3dp"
+                            android:background="@drawable/btn_filter"
+                            android:focusable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Pengeluaran"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/tvPenjualan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="3dp"
+                            android:background="@drawable/btn_filter_active"
+                            android:focusable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Penjualan"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/tvProfitFilter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="3dp"
+                            android:background="@drawable/btn_filter"
+                            android:focusable="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Profit"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <LinearLayout
+                    android:id="@+id/llGrafikImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="241dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/llFilterGrafik">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/grafik" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

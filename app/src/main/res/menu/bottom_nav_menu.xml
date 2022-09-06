@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_calender"
+        android:icon="@drawable/jatuh_tempo_icon"
+        android:title="Calender" />
+
+    <item
+        android:id="@+id/navigation_staff"
+        android:icon="@drawable/menu_staff"
+        android:title="Staff Management" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/menu_profile24"
+        android:title="Profile Page" />
+
+</menu>

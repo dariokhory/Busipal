@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:id="@+id/calenderNew"
+    tools:context=".CalenderNew">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="20dp"
+        android:background="@color/Blue">
+        <ImageButton
+            android:onClick="btnBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/Blue"
+            android:src="@drawable/back"
+            app:tint="@color/white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="@color/white"/>
+        <EditText
+            android:id="@+id/etTittle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/white_edit_text_shape"
+            android:textColor="@color/black"
+            android:hint="Title"
+            android:textSize="25sp"
+            android:paddingHorizontal="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Keterangan"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="@color/white"/>
+        <EditText
+            android:id="@+id/etKeterangan"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/white_edit_text_shape"
+            android:textColor="@color/black"
+            android:hint="Keterangan"
+            android:inputType="text"
+            android:textSize="25sp"
+            android:paddingHorizontal="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                />
+
+            <TimePicker
+                android:id="@+id/timePicker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner"
+                android:layout_weight="1"
+                android:scaleX="0.7"
+                android:scaleY="0.7" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/addcalenderbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/yellow_button"
+            android:onClick="CreateCalender"
+            android:text="Simpan"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.busipal">
+
+    <permission
+        android:name="com.example.kotlinsw.mypreload.READ_URI_DB"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Busipal">
+        <receiver
+            android:name=".MyMessage"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/my_message_info" />
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6759244867150297~3809216407" />
+
+        <provider
+            android:name=".provider.myContentProvider"
+            android:authorities="com.example.kotlinsw.mypreload.provider.myContentProvider"
+            android:enabled="true"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:readPermission="com.example.kotlinsw.mypreload.READ_URI_DB"></provider>
+
+        <activity
+            android:name=".Preload"
+            android:exported="false" />
+        <activity
+            android:name=".Contact"
+            android:exported="true"
+            android:parentActivityName=".CatatanHutangNew">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CatatanHutangNew" />
+        </activity>
+
+        <receiver
+            android:name=".MyReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Notification"
+            android:enabled="true" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".SendMyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".Navbar"
+            android:exported="true"
+            android:label="@string/title_activity_navbar" />
+        <activity
+            android:name=".SimulasiPajak"
+            android:exported="true" />
+        <activity
+            android:name=".CatatanTransaksiNew"
+            android:exported="true" />
+        <activity
+            android:name=".StokBarangMenipis"
+            android:exported="true" />
+        <activity
+            android:name=".UnduhLaporan"
+            android:exported="true" />
+        <activity
+            android:name=".KartuNama"
+            android:exported="true" />
+        <activity
+            android:name=".ProfilePage"
+            android:exported="true" />
+        <activity
+            android:name=".StokBarangNew"
+            android:exported="true" />
+        <activity
+            android:name=".StokBarangData"
+            android:exported="true" />
+        <activity
+            android:name=".CatatanHutangData"
+            android:exported="true" />
+        <activity
+            android:name=".CatatanHutangNew"
+            android:exported="true" />
+        <activity
+            android:name=".StaffManagementList"
+            android:exported="true" />
+        <activity
+            android:name=".StaffManagementNew"
+            android:exported="true" />
+        <activity
+            android:name=".CalenderNew"
+            android:exported="true" />
+        <activity
+            android:name=".CalenderJatuhTempo"
+            android:exported="true" />
+        <activity
+            android:name=".StokBarang"
+            android:exported="true" />
+        <activity
+            android:name=".CatatanHutang"
+            android:exported="true" />
+        <activity
+            android:name=".RegistrationPage"
+            android:exported="true" />
+        <activity
+            android:name=".HomeScreen"
+            android:exported="true" />
+        <activity
+            android:name=".AnalisisKeuangan"
+            android:exported="true" />
+        <activity
+            android:name=".StaffManagement"
+            android:exported="true" />
+        <activity
+            android:name=".Calender"
+            android:exported="true" />
+        <activity
+            android:name=".CatatanTransaki"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
